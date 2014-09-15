@@ -1,0 +1,180 @@
+{
+	"mailNew_header": {
+		"en": "Registration at %SNAME% - email validation"
+	},
+	"mailLost_header": {
+		"en": "Lost password at %SNAME%"
+	},
+	"mailNew_mailintro": {
+		"en": "Hi thanks for using the %SNAME% service. This e-mail is sent so that you can verify your e-mail address:"
+	},
+	"mailNew_urlintro": {
+		"en": "In order to continue registration of a new user on %SNAME%, visit the following URL:"
+	},
+	"mailLost_urlintro": {
+		"en": "To reset your password at %SNAME%, use the following URL:"
+	},
+	"mail_tokeninfo": {
+		"en": "This URL contains a secret token that validates your e-mail address. This token is valid for only 5 days. If this token expire, you have to request a new token by starting the registration over again."
+	},
+	"mail1_signature": {
+		"en": "Kind regards\n%SNAME%"
+	},
+	"s1_head": {
+		"en": "Register new account at %SNAME%"
+	},
+	"s1_para1": {
+		"en": "The first step is to register and verify your e-mail address. Make sure that you fill in an e-mail address where you can receive e-mail."
+	},
+	"s1_para2": {
+		"en": "You will receive an e-mail including a url you have to follow to continue the registration."
+	},
+	"submit_mail": {
+		"en": "Send e-mail"
+	},
+	"submit_change": {
+		"en": "Submit change"
+	},
+	"s2_para1": {
+		"en": "An e-mail is sent to you with a link that you need to follow in order to continue the registration proccess."
+	},
+	"s3_head": {
+		"en": "New user information"
+	},
+	"s3_intro": {
+		"en": "Type in your user account information."
+	},
+	"review_head": {
+		"en": "User information"
+	},
+	"review_intro": {
+		"en": "Your user id is %UID%. On this page can you alter some of the registered user information."
+	},
+	"lpw_head": {
+		"en": "Reset password"
+	},
+	"lpw_para1": {
+		"en": "Type the e-mail address you used when you registered your account to reset your password."
+	},
+	"lpw_para2": {
+		"en": "You will receive a e-mail including a url you can access to reset the lost password."
+	},
+	"lpw_reg_para1": {
+		"en": "Your user id is %UID%. Type you new password twice."
+	},
+	"lpw_success_head": {
+		"en": "Mail is successfully sent"
+	},
+	"lpw_success_para1": {
+		"en": "An e-mail is sent to you with a link that you need to follow in order to reset your password."
+	},
+	"lpw_complete_para1": {
+		"en": "The password is successfully reset"
+	},
+	"new_head_other": {
+		"en": "Other choices"
+	},
+	"link_newuser": {
+		"en": "Register new account"
+	},
+	"link_review": {
+		"en": "Change registered information"
+	},
+	"link_lostpw": {
+		"en": "Reset lost password"
+	},
+	"link_changepw": {
+		"en": "Change password"
+	},
+	"new_complete_head": {
+		"en": "Registration complete"
+	},
+	"new_complete_para1": {
+		"en": "You are now successfully registered at %SNAME%."
+	},
+	"new_mailUsed_head": {
+		"en": "Register new user"
+	},
+	"new_mailUsed_para1": {
+		"en": "A user is already registrated in %SNAME% with this e-mail address. This system allows only one user registration for each e-mail address."
+	},
+	"email_not_found": {
+		"en": "This e-mail address is not registered in this system."
+	},
+	"illegal_email": {
+		"en": "This (%VAR1%) does not look like ann valid e-mail address."
+	},
+	"invalid_token": {
+		"en": "Invalid token provided. The most common reason why a token becomes invalid is that the token you received has timed out. A token is only valid in a limited time period. Regsiter again to receive a new fresh token."
+	},
+	"err_retype_pw": {
+		"en": "The two typed password did not match."
+	},
+	"illegale_value": {
+		"en": "%VAR2% is illegale value for %VAR1%."
+	},
+	"void_value": {
+		"en": "Empty value is not allowed for %VAR1%."
+	},
+	"uid_taken": {
+		"en": "Username taken. You have to select a different username."
+	},
+	"uid_not_found": {
+		"en": "User id: %VAR1% is not found in the catalog."
+	},
+	"wrong_pw": {
+		"en": "Wrong password for this user."
+	},
+	"cpw_head": {
+		"en": "Change password"
+	},
+	"cpw_para1": {
+		"en": "Your user id is %UID%. Type the new password twice to and Submit set new password."
+	},
+	"message_chpw": {
+		"en": "Password successfully changed"
+	},
+	"message_chuinfo": {
+		"en": "User info successfully changed"
+	},
+	"uid_desc": {
+		"en": "Allowed chars for the User id is a-z, - and 0-9. It must start with a letter. The length of the User ID must be at least 3 characters and no longer than 16."
+	},
+	"pw1": {
+		"en": "New password"
+	},
+	"pw2": {
+		"en": "Retype new password"
+	},
+	"oncepw": {
+		"en": "Old password"
+	},
+	"ldap_add_invalid_syntax": {
+		"en": "Review the config file. You are trying to create a user but the objectClass is wrong. Also check the user data scheme"
+	},
+	"user_not_exists": {
+		"en": "User not exists"
+	},
+	"link_deluser": {
+		"en": "Unregister account"
+	},
+	"submit_delete": {
+		"en": "Delete user"
+	},
+	"message_userdel": {
+		"en": "User deleted"
+	},
+	"link_panel": {
+		"en": "Account Manager"
+	},
+	"link_enter": {
+		"en": "Manage my account"
+	},
+	"id_violation": {
+		"en": "The user identification can not be changed"
+	},
+	"return": {
+		"en": "Return"
+	}
+
+}

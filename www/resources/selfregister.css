@@ -1,0 +1,34 @@
+
+.error {
+	background: #c00;
+	margin: 3px 0px 1em 0px;
+	padding: 6px;
+	border: 1px solid #660000;
+	color: #fff;
+}
+.umesg {
+	background: #66FF99;
+	margin: 3px;
+	padding: 6px;
+	border: 1px solid #396;
+}
+
+div.element {
+
+	margin: .3em 0px 1em 0px;
+	font-size: 110%;
+}
+div.element label { 
+	font-weight: bold;
+	margin: 2px;
+}
+div.element input.inputelement {
+	font-size: 115%;
+	display: block;
+	margin: 2px;
+}
+div.element p {
+	font-size: 90%;
+	margin-top: .2em;
+	margin: 2px;
+}

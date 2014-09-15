@@ -1,0 +1,279 @@
+{
+	"mailNew_header": {
+		"no": "Registrering p\u00e5 %SNAME% - epost validering",
+		"es": "Registro en %SNAME% - validaci\u00f3n de email",
+		"de": "Registrierung f\u00fcr %SNAME% - Email-Best\u00e4tigung"
+	},
+	"mailLost_header": {
+		"no": "Glemt passord p\u00e5 %SNAME%",
+		"es": "Contrase\u00f1a perdida en %SNAME%",
+		"de": "Pa\u00dfwort f\u00fcr %SNAME% vergessen"
+	},
+	"mailNew_mailintro": {
+		"no": "Hei, takk for at du bruker %SNAME%. Denne epost er sendt, slik at du kan validere epost adressen din:",
+		"es": "Hola, gracias por usar el servicio %SNAME%. Se te envi\u00f3 este e-mail para verificar tu direcci\u00f3n de correo:",
+		"de": "Hallo! Danke, da\u00df Sie das Service %SNAME% nutzen. Diese E-Mail dient der Best\u00e4tigung, da\u00df Ihre E-Mail-Adresse korrekt funktioniert und tats\u00e4chlich von Ihnen kontrolliert wird."
+	},
+	"mailNew_urlintro": {
+		"no": "For fullf\u00f8re registereringen av en ny bruker p\u00e5 %SNAME%, g\u00e5 til f\u00f8lgende URL:",
+		"es": "Para continuar tu registro de nuevo usuario en %SNAME%, visita la siguiente URL:",
+		"de": "Um die Registerierung eines neuen Benutzerkontos f\u00fcr %SNAME% fortzusetzen, rufen Sie folgenden URL auf:"
+	},
+	"mailLost_urlintro": {
+		"no": "For \u00e5 nullstille ditt passord p\u00e5 %SNAME%, bruk f\u00f8lgende URL:",
+		"es": "Para reiniciar tu contrase\u00f1a en %SNAME%, sigue la siguiente URL:",
+		"de": "Um Ihr Pa\u00dfwort f\u00fcr %SNAME% zu \u00e4ndern, rufen Sie folgenden URL auf:"
+	},
+	"mail_tokeninfo": {
+		"no": "Denne URL-en inneholder en billett som validerer epostadressen din. Denne billetten er gyldig i 5 dager. Dersom den utl\u00f8per blir du n\u00f8dt til \u00e5 be om en ny billett og starte registreringen om igjen.",
+		"es": "Esta URL contiene un token secreto que valida tu direcci\u00f3n de correo. Este token es v\u00e1lido s\u00f3lo durante 5 d\u00edas. Si el token expira deber\u00e1s hacer otra petici\u00f3n empezando el proceso de registro de nuevo.",
+		"de": "Dieser URL enth\u00e4lt einen Code, um Ihre E-Mail-Adresse zu best\u00e4tigen. Dieser Code gilt f\u00fcnf Tage lang. Danach m\u00fcssten Sie die Registrierung von Neuem beginnen (und erhalten dann auch einen neuen Code)."
+	},
+	"mail1_signature": {
+		"no": "Vennlig hilsen %SNAME%",
+		"es": "Muchas gracias %SNAME%",
+		"de": "Mit freundlichen Gr\u00fc\u00dfen, die Betreiber des Services %SNAME%"
+	},
+	"s1_head": {
+		"no": "Registrer ny brukerkonto p\u00e5 %SNAME%",
+		"es": "Registrar una cuenta nueva en %SNAME%",
+		"de": "Neues Benutzerkonto bei %SNAME% anlegen"
+	},
+	"s3_head": {
+		"no": "Data for ny bruker",
+		"es": "Nueva informaci\u00f3n de usuario",
+		"de": "Daten f\u00fcr ein neues Benutzerkonto"
+	},
+	"s3_intro": {
+		"no": "Fyll inn passende brukerdata.",
+		"es": "Escribe la informaci\u00f3n de tu cuenta de usuario.",
+		"de": "Geben Sie die Daten Ihres Benutzerkontos an."
+	},
+	"review_head": {
+		"no": "Brukerdata",
+		"es": "Informaci\u00f3n de usuario",
+		"de": "Daten des Benutzerkontos"
+	},
+	"review_intro": {
+		"no": "Din bruker ID er %UID%. P\u00e5 denne siden kan du endre noe av brukerdataene som er lagret om deg.",
+		"es": "Tu identificador de usuario es %UID%. En esta p\u00e1gina puedes cambiar algunos de tus datos.",
+		"de": "Ihre UserID lautet %UID%. "
+	},
+	"lpw_head": {
+		"no": "Nullstill glemt passord",
+		"es": "Reiniciar contrase\u00f1a perdida",
+		"de": "Vergessenes Pa\u00dfwort zur\u00fccksetzen"
+	},
+	"lpw_success_head": {
+		"no": "Mail er sendt",
+		"es": "El correo se envi\u00f3 con \u00e9xito",
+		"de": "E-Mail wurde erfolgreich versendet."
+	},
+	"lpw_complete_para1": {
+		"no": "Passord er nullstilt",
+		"es": "La contrase\u00f1a se reinici\u00f3 correctamente.",
+		"de": "Ihr Pa\u00dfwort wurde erfolgreich zur\u00fcckgesetzt."
+	},
+	"new_head_other": {
+		"no": "Andre valg",
+		"es": "Otras opciones",
+		"de": "Andere Wahlm\u00f6glichkeiten"
+	},
+	"link_newuser": {
+		"no": "Registrer ny brukerkonto",
+		"es": "Crear nueva cuenta",
+		"de": "Neues Benutzerkonto registrieren"
+	},
+	"link_review": {
+		"no": "Endre registrerte brukerdata",
+		"es": "Cambiar informaci\u00f3n del registro",
+		"de": "Daten des Benutzerkontos \u00e4ndern"
+	},
+	"link_lostpw": {
+		"no": "Nullstill glemt passord",
+		"es": "Reiniciar contrase\u00f1a perdida",
+		"de": "Vergessenes Pa\u00dfwort zur\u00fccksetzen"
+	},
+	"link_changepw": {
+		"no": "Bytt passord",
+		"es": "Cambiar contrase\u00f1a",
+		"de": "Pa\u00dfwort \u00e4ndern"
+	},
+	"new_complete_head": {
+		"no": "Registreringen er fullf\u00f8rt",
+		"es": "Proceso de registro completo.",
+		"de": "Registrierung abgeschlossen"
+	},
+	"new_complete_para1": {
+		"no": "Du er n\u00e5 registrert p\u00e5 %SNAME%.",
+		"es": "Te registraste correctamente en %SNAME%.",
+		"de": "Sie k\u00f6nnen nun \u00fcber Ihr %SNAME% Benutzerkonto verf\u00fcgen."
+	},
+	"new_mailUsed_head": {
+		"no": "Registrer ny bruker",
+		"es": "Registrar un usuario nuevo",
+		"de": "Neues Benutzerkonto anlegen"
+	},
+	"err_retype_pw": {
+		"no": "De to passordene som ble skrevet inn stemmer ikke overens.",
+		"es": "Las constrase\u00f1as no coinciden.",
+		"de": "Die zwei angegebenen Pa\u00dfw\u00f6rter stimmen nicht \u00fcberein."
+	},
+	"void_value": {
+		"no": "Tom verdi er ikke lov for %VAR1%.",
+		"es": "No se permite que %VAR1% tenga un valor nulo. ",
+		"de": "%VAR1% darf nicht leer bleiben."
+	},
+	"uid_taken": {
+		"no": "Brukernavn er opptatt. Du m\u00e5 velge et annet brukernavn.",
+		"es": "Nombre de usuario ya en uso. Debes elegir otro nombre de usuario.",
+		"de": "Die gew\u00e4hlte UserID ist bereits vergeben. Bitte w\u00e4hlen Sie eine andere."
+	},
+	"cpw_head": {
+		"no": "Bytt passord",
+		"es": "Cambiar contrase\u00f1a",
+		"de": "Pa\u00dfwort \u00e4ndern"
+	},
+	"message_chpw": {
+		"no": "Passord er byttet",
+		"es": "Contrase\u00f1a actualizada con \u00e9xito",
+		"de": "Ihr Pa\u00dfwort wurde erfolgreich ge\u00e4ndert."
+	},
+	"message_chuinfo": {
+		"no": "Brukerdata ble endret",
+		"es": "Informaci\u00f3n de usuario actualizada con \u00e9xito",
+		"de": "Daten des Benutzerkontos erfolgreich ge\u00e4ndert"
+	},
+	"pw1": {
+		"no": "Nytt passord",
+		"es": "Nueva contrase\u00f1a",
+		"de": "Neues Pa\u00dfwort"
+	},
+	"pw2": {
+		"no": "Gjenta nytt passord",
+		"es": "Reescribe la nueva contrase\u00f1a",
+		"de": "Wiederholung des neuen Pa\u00dfworts"
+	},
+	"oncepw": {
+		"no": "Gammelt passord",
+		"es": "Antigua contrase\u00f1a",
+		"de": "Altes Pa\u00dfwort"
+	},
+	"lpw_para2": {
+		"es": "Recibir\u00e1s un correo incluyendo una URL para poder reiniciar la contrase\u00f1a",
+		"de": "An diese Adresse wird eine E-Mail mit einem URL gesendet, mittels dessen Sie das Pa\u00dfwort Ihres %SNAME% Benutzerkontos zur\u00fccksetzen lassen k\u00f6nnen.",
+		"no": "Du vil motta en e-post som inkluderer en URL (lenke) som du kan trykke p\u00e5 for \u00e5 nullstille det glemte passordet."
+	},
+	"email_not_found": {
+		"es": "La cuenta de correo no est\u00e1 registrada en el sistema.",
+		"de": "Diese E-Mail-Adresse ist in diesem Service nicht registriert.",
+		"no": "Denne e-post adressen er ikke registrert i systemet."
+	},
+	"wrong_pw": {
+		"es": "Contrase\u00f1a incorrecta",
+		"de": "Das angegebene Pa\u00dfwort f\u00fcr diese UserID ist falsch.",
+		"no": "Feil passord for denne brukeren."
+	},
+	"uid_desc": {
+		"es": "Los caracteres permitidos para el identificador de usuario son a..z, - y 0..9. El identificador debe empezar por una letra y tener una longitud de entre 3 y 16 caracteres.",
+		"de": "Die UserID darf nur aus den Kleinbuchstaben a bis z, dem Bindestrich, sowie den Ziffern 0 bis 9 bestehen. Die UserID mu\u00df aus mindestens drei und h\u00f6chstens 16 Zeichen bestehen.",
+		"no": "Tillatte tegn for brukernavn er a-z, - og 0-9. Det m\u00e5 starte p\u00e5 en bokstav. Lengen p\u00e5 brukernavnet m\u00e5 v\u00e6re minst 3 tegn og ikke mer enn 16."
+	},
+	"s1_para2": {
+		"es": "Recibir\u00e1s un correo con una URL que deber\u00e1s seguir para continuar con el registro.",
+		"de": "An diese Adresse wird eine automatisierte E-Mail gesendet, die einen URL enth\u00e4lt. Diesen URL rufen Sie dann in einem Webbrowser auf, um zu best\u00e4tigen, da\u00df Sie die Email erhalten haben.",
+		"no": "Du vil motta en e-post som inkluderer en URL (lenke) som du m\u00e5 trykke p\u00e5 for \u00e5 fortsette registreringen."
+	},
+	"lpw_reg_para1": {
+		"es": "Tu identificador de usuario es %UID%. Escribe tu nueva contrase\u00f1a dos veces.",
+		"de": "Ihre UserID lautet %UID%. W\u00e4hlen Sie ein neues Pa\u00dfwort f\u00fcr dieses Service und geben Sie es zweimal v\u00f6llig ident ein.",
+		"no": "Ditt brukernavn er %UID%. Skriv inn passordet ditt to ganger."
+	},
+	"lpw_success_para1": {
+		"es": "Se te envi\u00f3 un e-mail con un correo que debes seguir para reiniciar tu contrase\u00f1a.",
+		"de": "Ihnen wurde eine E-Mail gesendet, die einen URL enth\u00e4lt. Diesen URL rufen Sie in einem Webbrowser auf, um Ihr Pa\u00dfwort zur\u00fcckzusetzen.",
+		"no": "En e-post er sent til deg, med en URL (lenke) som du kan bruke for \u00e5 nullstille passordet."
+	},
+	"illegal_email": {
+		"es": "%VAR1% no parece una direcci\u00f3n de e-mail v\u00e1lida.",
+		"de": "Diese Angabe (%VAR1%) sieht nicht nach einer g\u00fcltigen E-Mail-Adresse aus.",
+		"no": "%VAR1% er ikke en godkjent e-post adresse."
+	},
+	"illegale_value": {
+		"es": "%VAR2% es un valor ilegal para %VAR1%.",
+		"de": "%VAR2% ist kein g\u00fcltiger Wert f\u00fcr %VAR1%.",
+		"no": "%VAR2% er en ugyldig verdi for %VAR1%."
+	},
+	"uid_not_found": {
+		"es": "Identificador: %VAR1% no encotrado en el cat\u00e1logo.",
+		"de": "Die UserID %VAR1% wurde nicht gefunden.",
+		"no": "Brukernavn %VAR1% ble ikke funnet i katalogen."
+	},
+	"cpw_para1": {
+		"es": "Tu identificador de usuario es %UID%. Escribe la nueva contrase\u00f1a dos veces y env\u00edala para actualizarla.",
+		"de": "Ihre UserID lautet %UID%. Suchen Sie sich ein neues Pa\u00dfwort f\u00fcr dieses Service aus und geben Sie es zweimal v\u00f6llig ident ein.",
+		"no": "Ditt brukernavn er %UID%. Skriv inn passordet to ganger \u00e5 trykk p\u00e5 knappen for \u00e5 sette nytt passord."
+	},
+	"s1_para1": {
+		"es": "El primer paso es registrarse y verificar tu direcci\u00f3n de e-mail. Aseg\u00farate de poner una direcci\u00f3n v\u00e1lida.",
+		"de": "Als ersten Schritt der Registrierung mu\u00df Ihre E-Mail-Adresse best\u00e4tigt werden. Geben Sie dazu eine E-Mail-Adresse an, \u00fcber die Sie E-Mails empfangen k\u00f6nnen.",
+		"no": "F\u00f8rste steg er \u00e5 registrere og verifisere din e-post adresse. V\u00e6r n\u00f8ye med \u00e5 skrive inn en e-post adresse som du kan motta e-post p\u00e5."
+	},
+	"s2_para1": {
+		"es": "Se te envi\u00f3 un e-mail con un enlace que debes seguir para continuar el proceso de registro.",
+		"de": "Ihnen wurde eine E-Mail gesendet, die einen URL enth\u00e4lt. Diesen URL rufen Sie in einem Webbrowser auf, um die Registrierung fortzusetzen.",
+		"no": "En e-post er sent til deg med en URL (lenke) som du m\u00e5 trykke p\u00e5 for \u00e5 fortsette registreringen."
+	},
+	"lpw_para1": {
+		"es": "Para reiniciar la contrase\u00f1a escribe la direcci\u00f3n de e-mail que usaste cuando registrarte la cuenta.",
+		"de": "Geben Sie jene E-Mail-Adresse an, die Sie zur Registrierung Ihres %SNAME% Benutzerkontos verwendet haben.",
+		"no": "Skriv inn e-post adressen som du brukte da du registrerte brukerkontoen din, for \u00e5 kunne nullstille passordet."
+	},
+	"new_mailUsed_para1": {
+		"es": "Ya existe un usuario en %SNAME% con esa direcci\u00f3n de e-mail. Este sistema s\u00f3lo permite un usuario por cuenta de correo electr\u00f3nico.",
+		"de": "Bei %SNAME% gibt es bereits ein Benutzerkonto mit dieser E-Mail-Adresse. Dieses Service erlaubt aber nur ein Benutzerkonto pro angegebener E-Mail-Adresse.",
+		"no": "En bruker er allerede registrert p\u00e5 %SNAME% med denne e-post adressen. Det tillates kun at man registrerer en bruker for hver e-post adresse."
+	},
+	"invalid_token": {
+		"es": "Suministraste un token inv\u00e1lido. La raz\u00f3n m\u00e1s com\u00fan por la que un token se vuelve no v\u00e1lido es porque alcaz\u00f3 la restricci\u00f3n temporal, s\u00f3lo es v\u00e1lido durante un periodo de tiempo. Reg\u00edstrate de nuevo para conseguir otro t\u00f3ken.",
+		"de": "Ung\u00fcltiger Code. Der h\u00e4ufigste Grund f\u00fcr ung\u00fcltige Codes ist der Ablauf des Codes, da alle Codes nur begrenzte Zeit g\u00fcltig sind. Beginnen Sie die Registrierung erneut, dann erhalten Sie auch einen neuen Code.",
+		"no": "Ugyldig billett. Den mest vanlige \u00e5rsaken til at en billett blir ugyldig er at den har utl\u00f8pt p\u00e5 tid siden den ble sendt til deg. Fors\u00f8k \u00e5 registrer deg p\u00e5 nytt for \u00e5 f\u00e5 en ny billett."
+	},
+	"submit_mail": {
+		"no": "Send e-post",
+		"de": "E-Mail abschicken",
+		"es": "Enviar e-mail"
+	},
+	"submit_change": {
+		"no": "Lagre endring",
+		"de": "\u00c4nderung durchf\u00fchren",
+		"es": "Guardar cambios"
+	},
+	"ldap_add_invalid_syntax": {
+		"es": "Revise la configuración. Está intentando crear un usuario pero el objectClass es erroneo. También comprueba la estructura de datos del usuario."
+	},
+	"user_not_exists": {
+		"es": "El usuario no existe"
+	},
+	"link_deluser": {
+		"es": "Eliminar cuenta"
+	},
+	"submit_delete": {
+		"es": "Eliminar usuario"
+	},
+	"message_userdel": {
+		"es": "Usuario eliminado"
+	},
+	"link_panel": {
+		"es": "Administrador de cuentas"
+	},
+	"link_enter": {
+		"es": "Administrar mi cuenta"
+	},
+	"id_violation": {
+		"es": "El identificador de usuario no puede ser modificado"
+	},
+	"return": {
+		"es": "Volver"
+	}
+}
