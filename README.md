@@ -1,10 +1,5 @@
-
-
-
-> Written with [StackEdit](https://stackedit.io/).
-
 Selfregister
-=========
+============
 
 This is a SimpleSAMLphp module that allows registration of users accounts. The original version was developed by [UNINETT](https://rnd.feide.no/2010/03/25/new_simplesamlphp_module_selfregister) and supported LDAP as a backend.
 This fork adds support for SQL databases as the back-end.
@@ -19,7 +14,7 @@ To store the password securely it is hashed with a salt, which is saved in a sep
 Enable this module the standard way (i.e. touching the file `enable`  in the module directory, and copy the default configuration file to `config/`).
 
 MySQL back-end
-================
+==============
 
 
 The default configuration file `module_selfregister.php` contains all the necessary statements. 
@@ -49,8 +44,8 @@ Create the table that will hold you users:
         )
 
 
-### authsource set-up
----------------------------
+###authsource set-up
+--------------------
 Create the accompanying authsource in `config/authsources.php`:
 
     'selfregister-mysql' => array(
@@ -71,7 +66,7 @@ Create the accompanying authsource in `config/authsources.php`:
 
 
 PostgreSQL back-end
-================
+===================
 
 ###Database set-up
 
@@ -102,4 +97,3 @@ Create the accompanying authsource in `config/authsources.php` (and remember to 
                         digest (CONCAT((SELECT salt FROM users WHERE userid = :username), password::TEXT), 'sha512'),
                         'hex')",
     ),
-
