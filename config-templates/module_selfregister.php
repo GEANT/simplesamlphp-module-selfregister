@@ -21,8 +21,9 @@ $config = array (
 	// FIXME this is still hardcoded
 	'mailtoken.lifetime' => (3600*24*5),
 
-	'mail.from'     => 'TERENA AAI admin <aai@terena.org>',
-	'mail.replyto'  => 'TERENA AAI admin <aai@terena.org>',
+	// FIXME make this default to technicalcontact_name etc.
+	'mail.from'     => 'Selfregister admin <na@example.org>',
+	'mail.replyto'  => 'Selfregister admin <aai@example.org>',
 	'mail.subject'  => 'E-mail verification',
 
 
@@ -49,7 +50,7 @@ $config = array (
 		'firstname'	=> 'givenName',
 		'lastname'	=> 'sn',
 		'email'		=> 'mail',
-		'userPassword' => 'password',
+		'userPassword'	=> 'password',
 	),
 
 
@@ -122,7 +123,7 @@ $config = array (
 
 
 
-
+/* Old LDAP config below
 
 	// LDAP back-end
 	'auth' => 'selfregister-ldap',
@@ -272,5 +273,6 @@ $config = array (
 			),
 		), // end pw2
 	),
+*/
 
 );
