@@ -53,7 +53,7 @@ Create the accompanying authsource in `config/authsources.php`:
             'dsn' => 'mysql:host=localhost;dbname=ssp_selfregister',
             'username' => 'ssp_user',
             'password' => 'hackme',
-            'query' => 'SELECT * FROM users WHERE userid = :username
+            'query' => 'SELECT userid, firstname, lastname, email FROM users WHERE userid = :username
                         AND password = SHA2 (
                             CONCAT(
                                 (SELECT salt FROM users WHERE userid = :username),
@@ -92,7 +92,7 @@ Create the accompanying authsource in `config/authsources.php` (and remember to 
             'username' => 'ssp_user',
             'password' => 'hackme',
             'query' => "
-                    SELECT * FROM users WHERE userid = :username
+                    SELECT userid, firstname, lastname, email FROM users WHERE userid = :username
                     AND password = encode(
                         digest (CONCAT((SELECT salt FROM users WHERE userid = :username), password::TEXT), 'sha512'),
                         'hex')",

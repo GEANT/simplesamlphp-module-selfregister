@@ -15,7 +15,7 @@ $config = array (
 	'auth' => 'selfregister-mysql',
 
 	//Used in mail and on pages
-	'system.name' => 'SimpleSAMLphp guest IdP'
+	'system.name' => 'SimpleSAMLphp guest IdP',
 
 	// Mailtoken validity
 	// FIXME this is still hardcoded
