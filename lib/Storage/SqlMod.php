@@ -41,7 +41,7 @@ class sspmod_selfregister_Storage_SqlMod implements iUserCatalogue {
 
 		$this->attributes = $attributes;
 		$this->hashAlgo = $hashAlgo;
-		$this->salt = bin2hex(SimpleSAML_Utilities::generateRandomBytes(8, FALSE));
+		$this->salt = bin2hex(SimpleSAML_Utilities::generateRandomBytes(64, FALSE));
 		$wc = SimpleSAML_Configuration::loadFromArray($writeConfig);
 		$this->userIdAttr = $wc->getString('user.id.param');
 
