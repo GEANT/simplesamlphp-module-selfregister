@@ -94,7 +94,7 @@ Create the accompanying authsource in `config/authsources.php` (and remember to 
             'query' => "
                     SELECT userid, firstname, lastname, email FROM users WHERE userid = :username
                     AND password = encode(
-                        digest (CONCAT((SELECT salt FROM users WHERE userid = :username), password::TEXT), 'sha512'),
+                        digest (CONCAT((SELECT salt FROM users WHERE userid = :username), :password::TEXT), 'sha512'),
                         'hex')",
     ),
 
