@@ -97,3 +97,22 @@ Create the accompanying authsource in `config/authsources.php` (and remember to 
                         digest (CONCAT((SELECT salt FROM users WHERE userid = :username), password::TEXT), 'sha512'),
                         'hex')",
     ),
+
+
+
+Attribute mapping
+=================
+
+Add the follwoing authproc filter to the IdP metadata (metadata/saml20-idp-hosted.php), so that the attributes will have the standard names:
+
+
+    'authproc' => array(
+
+        10 => array(
+            'class' => 'core:AttributeMap',
+            'userid'    => 'uid',
+            'email'     => 'mail',
+            'lastname'  => 'sn',
+            'firstname' => 'givenName',
+        ),
+
