@@ -1,5 +1,5 @@
 {
-	"name": "TERENA/simplesamlphp-module-selfregister",
+	"name": "geant/simplesamlphp-module-selfregister",
 	"description": "Allows self registration of user accounts using an SQL database back-end.",
 	"type": "simplesamlphp-module",
 	"require": {
