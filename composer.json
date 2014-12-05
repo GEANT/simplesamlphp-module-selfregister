@@ -3,6 +3,6 @@
 	"description": "Allows self registration of user accounts using an SQL database back-end.",
 	"type": "simplesamlphp-module",
 	"require": {
-		"simplesamlphp/composer-module-installer": "~1.0",
+		"simplesamlphp/composer-module-installer": "~1.0"
 	}
 }
