@@ -10,7 +10,8 @@ class sspmod_selfregister_Util {
 
 
 	public static function checkLoggedAndSameAuth() {
-		$session = SimpleSAML_Session::getInstance();
+        $session = SimpleSAML_Session::getSessionFromRequest();
+
 		if($session->isAuthenticated()) {
 			$uregconf = SimpleSAML_Configuration::getConfig('module_selfregister.php');
 			/* Get a reference to our authentication source. */
