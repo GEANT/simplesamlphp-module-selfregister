@@ -11,6 +11,11 @@ $asId = $uregconf->getString('auth');
 $as = new SimpleSAML_Auth_Simple($asId);
 $as->requireAuth();
 $attributes = $as->getAttributes();
+$session = SimpleSAML_Session::getSessionFromRequest();
+$data = $session->getData('selfregister:updated', 'attributes');
+if ($data !== NULL) {
+	$attributes = $data;
+}
 
 $formGen = new sspmod_selfregister_XHTML_Form($formFields, 'changePassword.php');
 $fields = array('pw1', 'pw2');
