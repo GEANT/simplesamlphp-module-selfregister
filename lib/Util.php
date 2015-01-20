@@ -10,14 +10,13 @@ class sspmod_selfregister_Util {
 
 
 	public static function checkLoggedAndSameAuth() {
-		$session = SimpleSAML_Session::getInstance();
-		if($session->isAuthenticated()) {
-			$uregconf = SimpleSAML_Configuration::getConfig('module_selfregister.php');
-			/* Get a reference to our authentication source. */
-			$asId = $uregconf->getString('auth');
-			if($session->getAuthority() == $asId) {
-				return new SimpleSAML_Auth_Simple($asId);
-			}
+		$session = SimpleSAML_Session::getSessionFromRequest();
+		$uregconf = SimpleSAML_Configuration::getConfig('module_selfregister.php');
+		$asId = $uregconf->getString('auth');
+
+		$as = new SimpleSAML_Auth_Simple($asId);
+		if ($as->isAuthenticated()) {
+			return $as;
 		}
 		return false;
 	}
