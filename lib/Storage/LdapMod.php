@@ -32,7 +32,7 @@ class sspmod_selfregister_Storage_LdapMod extends SimpleSAML_Auth_LDAP implement
 			$asc->getInteger('timeout', 0)
 		);
 
-		$this->searchBase = $asc->getString('search.base');
+		$this->searchBase = $asc->getArrayize('search.base');
 		$this->dnPattern = $asc->getString('dnpattern');
 		$this->searchDn = $asc->getString('search.username', NULL);
 		$this->searchPw = $asc->getString('search.password', NULL);
