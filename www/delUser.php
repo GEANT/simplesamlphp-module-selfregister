@@ -13,6 +13,11 @@ $as->requireAuth();
 
 /* Retrieve attributes of the user. */
 $attributes = $as->getAttributes();
+$session = SimpleSAML_Session::getSessionFromRequest();
+$data = $session->getData('selfregister:updated', 'attributes');
+if ($data !== NULL) {
+	$attributes = $data;
+}
 
 $formFields = $uregconf->getArray('formFields');
 $reviewAttr = $uregconf->getArray('attributes');

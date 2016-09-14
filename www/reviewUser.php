@@ -13,6 +13,12 @@ $as->requireAuth();
 /* Retrieve attributes of the user. */
 $attributes = $as->getAttributes();
 
+$session = SimpleSAML_Session::getSessionFromRequest();
+$data = $session->getData('selfregister:updated', 'attributes');
+if ($data !== NULL) {
+	$attributes = $data;
+}
+
 $formFields = $uregconf->getArray('formFields');
 $reviewAttr = $uregconf->getArray('attributes');
 
@@ -68,14 +74,11 @@ if(array_key_exists('sender', $_POST)) {
 		// But now atributes from the logged user is obsolete, So I can actualize it and get values from session
 		// but maybe we could have security problem if IdP isnt configured correctly.
 
-		$session = SimpleSAML_Session::getSessionFromRequest();
-
 		foreach($userInfo as $name => $value) {
 			$attributes[$name][0] = $value;
-			$session->setAttribute($name, $attributes[$name]);
 		}
+		$session->setData('selfregister:updated', 'attributes', $attributes, SimpleSAML_Session::DATA_TIMEOUT_SESSION_END);
 
-		$attributes = $as->getAttributes();
 		$values = sspmod_selfregister_Util::filterAsAttributes($attributes, $reviewAttr);
 
 		$html->data['userMessage'] = 'message_chuinfo';
