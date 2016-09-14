@@ -1,7 +1,7 @@
 <?php
 
 $config = SimpleSAML_Configuration::getInstance();
-$session = SimpleSAML_Session::getInstance();
+$session = SimpleSAML_Session::getSessionFromRequest();
 $uregconf = SimpleSAML_Configuration::getConfig('module_selfregister.php');
 /* Get a reference to our authentication source. */
 $asId = $uregconf->getString('auth');

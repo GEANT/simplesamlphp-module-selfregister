@@ -68,7 +68,7 @@ if(array_key_exists('sender', $_POST)) {
 		// But now atributes from the logged user is obsolete, So I can actualize it and get values from session
 		// but maybe we could have security problem if IdP isnt configured correctly.
 
-		$session = SimpleSAML_Session::getInstance();
+		$session = SimpleSAML_Session::getSessionFromRequest();
 
 		foreach($userInfo as $name => $value) {
 			$attributes[$name][0] = $value;
