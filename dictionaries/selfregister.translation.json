@@ -7,7 +7,7 @@
 	"mailLost_header": {
 		"no": "Glemt passord p\u00e5 %SNAME%",
 		"es": "Contrase\u00f1a perdida en %SNAME%",
-		"de": "Pa\u00dfwort f\u00fcr %SNAME% vergessen"
+		"de": "Passwort f\u00fcr %SNAME% vergessen"
 	},
 	"mailNew_mailintro": {
 		"no": "Hei, takk for at du bruker %SNAME%. Denne epost er sendt, slik at du kan validere epost adressen din:",
@@ -22,7 +22,7 @@
 	"mailLost_urlintro": {
 		"no": "For \u00e5 nullstille ditt passord p\u00e5 %SNAME%, bruk f\u00f8lgende URL:",
 		"es": "Para reiniciar tu contrase\u00f1a en %SNAME%, sigue la siguiente URL:",
-		"de": "Um Ihr Pa\u00dfwort f\u00fcr %SNAME% zu \u00e4ndern, rufen Sie folgenden URL auf:"
+		"de": "Um Ihr Passwort f\u00fcr %SNAME% zu \u00e4ndern, rufen Sie folgenden URL auf:"
 	},
 	"mail_tokeninfo": {
 		"no": "Denne URL-en inneholder en billett som validerer epostadressen din. Denne billetten er gyldig i 5 dager. Dersom den utl\u00f8per blir du n\u00f8dt til \u00e5 be om en ny billett og starte registreringen om igjen.",
@@ -62,7 +62,7 @@
 	"lpw_head": {
 		"no": "Nullstill glemt passord",
 		"es": "Reiniciar contrase\u00f1a perdida",
-		"de": "Vergessenes Pa\u00dfwort zur\u00fccksetzen"
+		"de": "Vergessenes Passwort zur\u00fccksetzen"
 	},
 	"lpw_success_head": {
 		"no": "Mail er sendt",
@@ -72,7 +72,7 @@
 	"lpw_complete_para1": {
 		"no": "Passord er nullstilt",
 		"es": "La contrase\u00f1a se reinici\u00f3 correctamente.",
-		"de": "Ihr Pa\u00dfwort wurde erfolgreich zur\u00fcckgesetzt."
+		"de": "Ihr Passwort wurde erfolgreich zur\u00fcckgesetzt."
 	},
 	"new_head_other": {
 		"no": "Andre valg",
@@ -92,12 +92,12 @@
 	"link_lostpw": {
 		"no": "Nullstill glemt passord",
 		"es": "Reiniciar contrase\u00f1a perdida",
-		"de": "Vergessenes Pa\u00dfwort zur\u00fccksetzen"
+		"de": "Vergessenes Passwort zur\u00fccksetzen"
 	},
 	"link_changepw": {
 		"no": "Bytt passord",
 		"es": "Cambiar contrase\u00f1a",
-		"de": "Pa\u00dfwort \u00e4ndern"
+		"de": "Passwort \u00e4ndern"
 	},
 	"new_complete_head": {
 		"no": "Registreringen er fullf\u00f8rt",
@@ -132,12 +132,12 @@
 	"cpw_head": {
 		"no": "Bytt passord",
 		"es": "Cambiar contrase\u00f1a",
-		"de": "Pa\u00dfwort \u00e4ndern"
+		"de": "Passwort \u00e4ndern"
 	},
 	"message_chpw": {
 		"no": "Passord er byttet",
 		"es": "Contrase\u00f1a actualizada con \u00e9xito",
-		"de": "Ihr Pa\u00dfwort wurde erfolgreich ge\u00e4ndert."
+		"de": "Ihr Passwort wurde erfolgreich ge\u00e4ndert."
 	},
 	"message_chuinfo": {
 		"no": "Brukerdata ble endret",
@@ -147,21 +147,21 @@
 	"pw1": {
 		"no": "Nytt passord",
 		"es": "Nueva contrase\u00f1a",
-		"de": "Neues Pa\u00dfwort"
+		"de": "Neues Passwort"
 	},
 	"pw2": {
 		"no": "Gjenta nytt passord",
 		"es": "Reescribe la nueva contrase\u00f1a",
-		"de": "Wiederholung des neuen Pa\u00dfworts"
+		"de": "Wiederholung des neuen Passworts"
 	},
 	"oncepw": {
 		"no": "Gammelt passord",
 		"es": "Antigua contrase\u00f1a",
-		"de": "Altes Pa\u00dfwort"
+		"de": "Altes Passwort"
 	},
 	"lpw_para2": {
 		"es": "Recibir\u00e1s un correo incluyendo una URL para poder reiniciar la contrase\u00f1a",
-		"de": "An diese Adresse wird eine E-Mail mit einem URL gesendet, mittels dessen Sie das Pa\u00dfwort Ihres %SNAME% Benutzerkontos zur\u00fccksetzen lassen k\u00f6nnen.",
+		"de": "An diese Adresse wird eine E-Mail mit einem URL gesendet, mittels dessen Sie das Passwort Ihres %SNAME% Benutzerkontos zur\u00fccksetzen lassen k\u00f6nnen.",
 		"no": "Du vil motta en e-post som inkluderer en URL (lenke) som du kan trykke p\u00e5 for \u00e5 nullstille det glemte passordet."
 	},
 	"email_not_found": {
@@ -171,7 +171,7 @@
 	},
 	"wrong_pw": {
 		"es": "Contrase\u00f1a incorrecta",
-		"de": "Das angegebene Pa\u00dfwort f\u00fcr diese UserID ist falsch.",
+		"de": "Das angegebene Passwort f\u00fcr diese UserID ist falsch.",
 		"no": "Feil passord for denne brukeren."
 	},
 	"uid_desc": {
@@ -186,12 +186,12 @@
 	},
 	"lpw_reg_para1": {
 		"es": "Tu identificador de usuario es %UID%. Escribe tu nueva contrase\u00f1a dos veces.",
-		"de": "Ihre UserID lautet %UID%. W\u00e4hlen Sie ein neues Pa\u00dfwort f\u00fcr dieses Service und geben Sie es zweimal v\u00f6llig ident ein.",
+		"de": "Ihre UserID lautet %UID%. W\u00e4hlen Sie ein neues Passwort f\u00fcr dieses Service und geben Sie es zweimal v\u00f6llig ident ein.",
 		"no": "Ditt brukernavn er %UID%. Skriv inn passordet ditt to ganger."
 	},
 	"lpw_success_para1": {
 		"es": "Se te envi\u00f3 un e-mail con un correo que debes seguir para reiniciar tu contrase\u00f1a.",
-		"de": "Ihnen wurde eine E-Mail gesendet, die einen URL enth\u00e4lt. Diesen URL rufen Sie in einem Webbrowser auf, um Ihr Pa\u00dfwort zur\u00fcckzusetzen.",
+		"de": "Ihnen wurde eine E-Mail gesendet, die einen URL enth\u00e4lt. Diesen URL rufen Sie in einem Webbrowser auf, um Ihr Passwort zur\u00fcckzusetzen.",
 		"no": "En e-post er sent til deg, med en URL (lenke) som du kan bruke for \u00e5 nullstille passordet."
 	},
 	"illegal_email": {
@@ -211,7 +211,7 @@
 	},
 	"cpw_para1": {
 		"es": "Tu identificador de usuario es %UID%. Escribe la nueva contrase\u00f1a dos veces y env\u00edala para actualizarla.",
-		"de": "Ihre UserID lautet %UID%. Suchen Sie sich ein neues Pa\u00dfwort f\u00fcr dieses Service aus und geben Sie es zweimal v\u00f6llig ident ein.",
+		"de": "Ihre UserID lautet %UID%. Suchen Sie sich ein neues Passwort f\u00fcr dieses Service aus und geben Sie es zweimal v\u00f6llig ident ein.",
 		"no": "Ditt brukernavn er %UID%. Skriv inn passordet to ganger \u00e5 trykk p\u00e5 knappen for \u00e5 sette nytt passord."
 	},
 	"s1_para1": {
