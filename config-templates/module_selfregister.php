@@ -38,6 +38,11 @@ $config = array (
 		// This is usually the primary key
 		// This relates to the attributs mapping (see below)
 		'user.id.param' => 'userid',
+
+		// Whether to create unique userids programmatically instead of
+		// having the subject pick a userid during registration.
+		// Useful if you re-use the email addresses as login name.
+		'user.id.autocreate'    => false,
 	), // end SQL config
 
 
@@ -46,7 +51,7 @@ $config = array (
 
 
 	'attributes'  => array(
-		'username'	=> 'uid',
+		'username'	=> 'uid', // comment out this line if you set user.id.autocreate to true
 		'firstname'	=> 'givenName',
 		'lastname'	=> 'sn',
 		'email'		=> 'mail',

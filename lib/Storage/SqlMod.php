@@ -44,7 +44,8 @@ class sspmod_selfregister_Storage_SqlMod implements iUserCatalogue {
 		$this->salt = bin2hex(SimpleSAML_Utilities::generateRandomBytes(64));
 		$wc = SimpleSAML_Configuration::loadFromArray($writeConfig);
 		$this->userIdAttr = $wc->getString('user.id.param');
-
+		$this->userIdAutoCreate = $wc->getBoolean('user.id.autocreate', false);
+		//$this->userIdAutoCreateLength = $wc->getInteger('user.id.autocreate.length', 9);
 	}
 
 	public function addUser($entry){
@@ -57,8 +58,11 @@ class sspmod_selfregister_Storage_SqlMod implements iUserCatalogue {
 
 		} else {
 
-			//$userid = $this->createUniqueUserId($entry['email']);
-			$userid = $entry['username'];
+			if ($this->userIdAutoCreate) {
+			    $userid = $this->createUniqueUserId();
+			} else {
+			    $userid = $entry['username'];
+			}
 			$sth = $this->dbh->prepare("
 				INSERT INTO users
 				(userid, email, password, salt, firstname, lastname, created, updated)
@@ -69,6 +73,31 @@ class sspmod_selfregister_Storage_SqlMod implements iUserCatalogue {
 				$userid, strtolower($entry['email']), $this->hash_pass($entry['userPassword']), $this->salt, $entry['firstname'], $entry['lastname']
 			));
 		}
+	}
+
+	public function createUniqueUserId() {
+		$userid = $this->createUserId();
+		while ($this->isRegistered($this->userIdAttr, $userid)) {
+			$userid = $this->createUserId($string);
+		}
+		return $userid;
+	}
+
+	private function createUserId() {
+		// Ideas cf. http://stackoverflow.com/questions/2799495/generate-unique-random-alphanumeric-characters-that-are-7-characters-long
+
+		// Avoid chars that might be mistaken by a human (no [oO0il1]).
+		// Also is easily configurable wrt string length.
+		// Duplicates w/ deleted accounts are more likely over time, though.
+		// (All non-transient SAML identifiers require non-reassignment: subject-id, pairwise-id, persistent NameID, etc.)
+		//return substr( str_shuffle('abcdefghjkmnpqrstuvwxyz23456789'), 0, $this->userIdAutoCreateLength); // configurable length
+
+		// Makes duplicates w/ deleted accounts less likely, but can't rule those out completely.
+		// Not easily configureable wrt string length.
+		//return base_convert(mt_rand(100, 999) . intval(microtime(true) * 10), 10, 36); // 9 chars
+
+		// Time-based, so no duplicate ids even with deleted accounts.
+		return uniqid(); // 13 chars
 	}
 
 	private function hash_pass($plainPassword) {
