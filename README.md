@@ -7,20 +7,19 @@ This fork adds support for SQL databases as the back-end.
 The module needs an `sqlauth:SQL`   authentication source as the place to store user accounts. You can use an existing authsource, just make sure the credentials used allow for writing.
 
 People that want to sign up for an account need to fill in their e-mail address, and they get sent a URL with a token to confirm the address.
-Upon verification the user can then needs choose a username, a password, and values for first and last name.
+Upon verification the user can then needs choose a username (unless auto-generation is configured, see below), a password, and values for first and last name.
 These values are stored in the SQL back-end.
 To store the password securely it is hashed with a salt, which is saved in a separate database column. This approach allows the database to do the password verification.
 
 Enable this module the standard way (i.e. touching the file `enable`  in the module directory, and copy the default configuration file to `config/`).
 
 MySQL back-end
-==============
-
+--------------
 
 The default configuration file `module_selfregister.php` contains all the necessary statements. 
 
 
-###Database set-up
+### Database set-up
 
 Create the database,  add a user, and assign permissions:
 
@@ -44,8 +43,8 @@ Create the table that will hold you users:
         )
 
 
-###authsource set-up
---------------------
+### authsource set-up
+
 Create the accompanying authsource in `config/authsources.php`:
 
     'selfregister-mysql' => array(
@@ -66,9 +65,9 @@ Create the accompanying authsource in `config/authsources.php`:
 
 
 PostgreSQL back-end
-===================
+-------------------
 
-###Database set-up
+### Database set-up
 
 As the postgres super user, create a new role, and a new database that is owner by the new user:
 
@@ -82,7 +81,7 @@ In order to use the crypto that is needed to do the password verification, you n
 
 This in turn might depend on an extra package, for Debian/Ubuntu this is the `postgresql-contrib` package.
 
-####authsource set-up
+### authsource set-up
 
 Create the accompanying authsource in `config/authsources.php` (and remember to update the `auth` statement in `module_selfregister.php`_:
 
@@ -101,7 +100,7 @@ Create the accompanying authsource in `config/authsources.php` (and remember to 
 
 
 Attribute mapping
-=================
+-----------------
 
 Add the follwoing authproc filter to the IdP metadata (metadata/saml20-idp-hosted.php), so that the attributes will have the standard names:
 
@@ -115,4 +114,23 @@ Add the follwoing authproc filter to the IdP metadata (metadata/saml20-idp-hoste
             'lastname'  => 'sn',
             'firstname' => 'givenName',
         ),
+
+
+Log in with email address
+-------------------------
+
+> N.B.: This feature is currently only implemented for the SQL storage backend, not for LDAP.
+
+Deployments that want to use the subject's email address as login name/userid can set the option `user.id.autocreate` to `true` in `config/module_selfregister.php`. This will cause the `userid` value to be filled automatically (more or less randomly), without the subject having to chose and remember Yet Another username during registration.  
+(Note that the string `Username` then might also need to be changed in the relevant dictionaries to state "Email address" instead, to avoid confusion about just what to enter during login.)
+
+To prevent the username field and description from showing up during registration also disable (uncomment or delete) the mapping of `username` within the `$attributes` array in your `config/module_selfregister.php`, such as below:
+
+    'attributes'  => array(
+         //'username'  => 'uid', // Removed, we use user.id.autocreate instead
+         'firstname' => 'givenName',
+         'lastname'  => 'sn',
+         'email'     => 'mail',
+         'userPassword'  => 'password',
+     ),
 
