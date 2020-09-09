@@ -1,5 +1,5 @@
 {
-	"name": "geant/simplesamlphp-module-selfregister",
+	"name": "montreux-oberland-bernois/simplesamlphp-module-selfregister",
 	"description": "Allows self registration of user accounts using an SQL database back-end.",
 	"type": "simplesamlphp-module",
 	"require": {
