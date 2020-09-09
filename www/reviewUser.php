@@ -107,6 +107,11 @@ $formGen->setValues($values);
 $formGen->setSubmitter('submit_change');
 $formHtml = $formGen->genFormHtml();
 $html->data['formHtml'] = $formHtml;
+
+$html->data['givenname'] = $values["givenName"];
+$html->data['sn'] = $values["sn"];
+$html->data['mail'] = $values["mail"];
+
 $html->data['uid'] = $attributes[$store->userIdAttr][0];
 $html->show();
 
