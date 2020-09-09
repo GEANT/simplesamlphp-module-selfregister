@@ -1,6 +1,6 @@
 <?php
 
-class sspmod_selfregister_XHTML_Mailer {
+class sspmod_selfregister_XHTML_Mailer extends \SimpleSAML\Utils\EMail {
 
 	private $to = NULL;
 	private $cc = NULL;
@@ -10,6 +10,7 @@ class sspmod_selfregister_XHTML_Mailer {
 	private $subject = NULL;
 	private $headers = array();
 	private $tp = NULL;
+	private $mailer;
 
 	/**
 	 * Constructor
@@ -29,7 +30,7 @@ class sspmod_selfregister_XHTML_Mailer {
 	}
 
 
-	private function generateBody(){
+	public function generateBody($tpl = null){
 		ob_start();
 		$this->tp->show();
 		$bodyText = ob_get_contents();
@@ -91,7 +92,7 @@ Content-Transfer-Encoding: 8bit
 	}
 
 
-	function send() {
+	function send($plainTextOnly = false) {
 		if ($this->to == NULL)
 			throw new Exception('EMail field [to] is required and not set.');
 		if ($this->subject == NULL)
@@ -99,21 +100,43 @@ Content-Transfer-Encoding: 8bit
 		// if ($this->body == NULL) throw new Exception('EMail field [body] is required and not set.');
 		$random_hash = SimpleSAML_Utilities::stringToHex(
 			SimpleSAML_Utilities::generateRandomBytes(16));
-		$message = $this->buildMessage($random_hash);
+		$this->generateBody();
 
 		if (isset($this->from))
 			$this->headers[]= 'From: ' . $this->from;
 		if (isset($this->replyto))
 			$this->headers[]= 'Reply-To: ' . $this->replyto;
 
-		$this->headers[] = 'Content-Type: multipart/alternative; boundary="simplesamlphp-' . $random_hash . '"'; 
+		$this->initMailer();
 
-		$headers = join("\r\n", $this->headers);
-
-		$mail_sent = @mail($this->to, $this->subject, $message, $headers);
+		$this->mailer->Body = $this->body;
+		$this->mailer->AltBody = $this->body;
+		$mail_sent = $this->mailer->send();
+		//$mail_sent = @mail($this->to, $this->subject, $message, $headers);
 		SimpleSAML_Logger::debug('Email: Sending e-mail to [' . $this->to . '] : ' . ($mail_sent ? 'OK' : 'Failed'));
 		if (!$mail_sent) throw new Exception('Error when sending e-mail');
 	}
 
+	private function initMailer() {
+		$config = \SimpleSAML\Configuration::getInstance()->getArrayize('mail.transport.options');
+		$this->mailer = new PHPMailer\PHPMailer\PHPMailer(true);
+		$this->mailer->Host = $config['host'];
+		$this->mailer->Port = $config['port'];
+		if ($config['auth']) {
+			$this->mailer->SMTPAuth = true;
+			$this->mailer->Username = $config['username'];
+			$this->mailer->Password = $config['password'];
+		}
+		$this->mailer->SMTPSecure = $config['security'];
+		$this->mailer->SMTPOptions = $config['options'];
+
+		$this->mailer->isSMTP();
+		$this->mailer->Subject = $this->subject;
+		$this->mailer->setFrom($this->from);
+		$this->mailer->addAddress($this->to);
+		foreach ($this->headers as $header) {
+			$header = explode(':', $header, 2);
+			$this->mailer->addCustomHeader($header[0], $header[1]);
+		}
+	}
 }// end sspmod_selfregister_XHTML_Mailer
-?>

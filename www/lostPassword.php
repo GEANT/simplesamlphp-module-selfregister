@@ -1,4 +1,5 @@
 <?php
+use SimpleSAML\Utils\EMail;
 
 $config = SimpleSAML_Configuration::getInstance();
 $uregconf = SimpleSAML_Configuration::getConfig('module_selfregister.php');
@@ -121,7 +122,7 @@ if (array_key_exists('emailreg', $_REQUEST)) {
 			'emailconfirmed' => $email,
 			'token' => $token);
 		$formGen->addHiddenData($hidden);
-		$formGen->setSubmitter('submit_change');
+		$formGen->setSubmitter('{mob:lostpass:form.submit_change}');
 		$formHtml = $formGen->genFormHtml();
 
 		$html = new SimpleSAML_XHTML_Template(
@@ -129,6 +130,10 @@ if (array_key_exists('emailreg', $_REQUEST)) {
 			'selfregister:lostPassword_changePassword.tpl.php',
 			'selfregister:selfregister');
 		$html->data['formHtml'] = $formHtml;
+
+		$html->data['emailconfirmed'] = $email;
+		$html->data['token'] = $token;
+
 		$html->data['uid'] = $userValues[$store->userIdAttr];
 		$html->show();
 	} catch(sspmod_selfregister_Error_UserException $e) {
@@ -142,7 +147,7 @@ if (array_key_exists('emailreg', $_REQUEST)) {
 			$e->getMesgId(),
 			$e->getTrVars()
 		);
-		$terr->data['error'] = htmlspecialchar($error);
+		$terr->data['error'] = htmlspecialchars($error);
 
 		$terr->show();
 	}
