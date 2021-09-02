@@ -52,9 +52,9 @@ class sspmod_selfregister_Storage_SqlMod implements iUserCatalogue
     {
         SimpleSAML_Logger::debug('entry var: ' . var_export($entry, 1));
         if ($this->isRegistered('email', $entry['email'])) {
-            throw new sspmod_selfregister_Error_UserException('{mob:register:email_taken}');
+            throw new sspmod_selfregister_Error_UserException('email_taken');
         } elseif ($this->isRegistered('userid', $entry['username'])) {
-            throw new sspmod_selfregister_Error_UserException('{mob:register:uid_taken}');
+            throw new sspmod_selfregister_Error_UserException('uid_taken');
         } else {
             //$userid = $this->createUniqueUserId($entry['email']);
             //$userid = $entry['username'];

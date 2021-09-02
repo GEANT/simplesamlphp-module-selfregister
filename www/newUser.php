@@ -6,7 +6,26 @@ $tokenLifetime = $uregconf->getInteger('mailtoken.lifetime');
 $viewAttr = $uregconf->getArray('attributes');
 $formFields = $uregconf->getArray('formFields');
 $systemName = array('%SNAME%' => $uregconf->getString('system.name') );
-
+$session = \SimpleSAML\Session::getSessionFromRequest();
+$state = $session->getDataOfType("\\SimpleSAML\\Auth\\State");
+$state = array_pop($state);
+$state = unserialize($state);
+if (!$state) {
+    // Retrieve URN
+    try {
+        $metadata = \SimpleSAML\Metadata\MetaDataStorageHandler::getMetadataHandler()
+            ->getMetaData($_REQUEST['urn'] ?? null, 'saml20-sp-remote');
+    }
+    catch (\SimpleSAML\Error\MetadataNotFound $e) {
+        // Fallback bad URN
+        $metadata = \SimpleSAML\Metadata\MetaDataStorageHandler::getMetadataHandler()
+            ->getMetaData(null, 'saml20-sp-remote');
+    }
+    $state['SPMetadata'] = $metadata;
+    \SimpleSAML\Auth\State::saveState($state, 'selfregistrer:registration');
+} else {
+    $metadata = $state['SPMetadata'];
+}
 
 if (array_key_exists('emailreg', $_REQUEST)) {
     // Stage 2: User have submitted e-mail adress for registration
@@ -43,6 +62,7 @@ if (array_key_exists('emailreg', $_REQUEST)) {
                 'selfregister:selfregister'
             );
             $html->data['systemName'] = $systemName;
+            $html->data['connectionLink'] = $metadata['AssertionConsumerService'];
 
             $html->show();
         } else {
@@ -51,12 +71,12 @@ if (array_key_exists('emailreg', $_REQUEST)) {
             $newToken = $tg->generate_token();
 
             $url = SimpleSAML_Utilities::selfURL();
-
             $registerurl = SimpleSAML_Utilities::addURLparameter(
                 $url,
                 array(
                     'email' => $email,
-                    'token' => $newToken
+                    'token' => $newToken,
+                    'urn' => $metadata['entityid']
                 )
             );
 
@@ -66,7 +86,8 @@ if (array_key_exists('emailreg', $_REQUEST)) {
                 'selfregister:selfregister'
             );
             $mailt->data['email'] = $email;
-            $mailt->data['registerurl'] = $registerurl;
+            $mailt->data['registerurl'] = SimpleSAML_Utilities::addURLparameter($registerurl,
+                [$mailt->getTranslator()->getLanguage()->getLanguageParameterName() => strtolower($mailt->getTranslator()->getLanguage()->getLanguage())]);
             $mailt->data['systemName'] = $systemName;
 
             $mailer = new sspmod_selfregister_XHTML_Mailer(
@@ -95,9 +116,10 @@ if (array_key_exists('emailreg', $_REQUEST)) {
         );
         $et->data['email'] = $_POST['emailreg'];
         $et->data['systemName'] = $systemName;
+        $et->data['connectionLink'] = $metadata['AssertionConsumerService'];
 
         $error = $et->t(
-            $e->getMesgId(),
+            '{mob:register:'.$e->getMesgId().'}',
             $e->getTrVars()
         );
         $et->data['error'] = htmlspecialchars($error);
@@ -106,6 +128,7 @@ if (array_key_exists('emailreg', $_REQUEST)) {
     }
 } elseif (array_key_exists('token', $_GET)) {
     // Stage 3: User access page from url in e-mail
+
     try {
         $email = filter_input(
             INPUT_GET,
@@ -150,9 +173,10 @@ if (array_key_exists('emailreg', $_REQUEST)) {
             'selfregister:selfregister'
         );
         $html->data['formHtml'] = $formHtml;
-
         $html->data['emailconfirmed'] = $email;
         $html->data['token'] = $token;
+        $html->data['connectionLink'] = $metadata['AssertionConsumerService'];
+        $html->data['urn'] = $metadata['entityid'];
 
         $html->show();
     } catch (sspmod_selfregister_Error_UserException $e) {
@@ -164,11 +188,12 @@ if (array_key_exists('emailreg', $_REQUEST)) {
         );
 
         $error = $terr->t(
-            $e->getMesgId(),
+            '{mob:register:'.$e->getMesgId().'}',
             $e->getTrVars()
         );
         $terr->data['error'] = htmlspecialchars($error);
         $terr->data['systemName'] = $systemName;
+        $terr->data['connectionLink'] = $metadata['AssertionConsumerService'];
         $terr->show();
     }
 } elseif (array_key_exists('sender', $_POST)) {
@@ -181,8 +206,7 @@ if (array_key_exists('emailreg', $_REQUEST)) {
          );
          $validValues = $validator->validateInput();
 
-
-         $userInfo = sspmod_selfregister_Util::processInput($validValues, $viewAttr);
+        $userInfo = sspmod_selfregister_Util::processInput($validValues, $viewAttr);
 
          $store = sspmod_selfregister_Storage_UserCatalogue::instantiateStorage();
 
@@ -195,6 +219,7 @@ if (array_key_exists('emailreg', $_REQUEST)) {
          );
 
          $html->data['systemName'] = $systemName;
+         $html->data['redirecturl'] = $metadata['AssertionConsumerService'];
          $html->show();
     } catch (sspmod_selfregister_Error_UserException $e) {
          // Some user error detected
@@ -229,9 +254,11 @@ if (array_key_exists('emailreg', $_REQUEST)) {
         $html->data['uid'] = $_REQUEST['uid'];
         $html->data['givenname'] = $_REQUEST['givenName'];
         $html->data['sn'] = $_REQUEST['sn'];
+        $html->data['urn'] = $metadata['entityid'];
+        $html->data['connectionLink'] = $metadata['AssertionConsumerService'];
 
         $error = $html->t(
-            $e->getMesgId(),
+            '{mob:register:'.$e->getMesgId().'}',
             $e->getTrVars()
         );
 
@@ -246,6 +273,7 @@ if (array_key_exists('emailreg', $_REQUEST)) {
         'selfregister:selfregister'
     );
     $html->data['systemName'] = $systemName;
+    $html->data['connectionLink'] = $metadata['AssertionConsumerService'];
 
     $logged_and_same_auth = sspmod_selfregister_Util::checkLoggedAndSameAuth();
     if ($logged_and_same_auth) {
